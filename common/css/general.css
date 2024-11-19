@@ -10,17 +10,43 @@
 
 
 
-@import "global.css";
+/* @import "global.css"; */
 
 
 
 /* --------------------------------
 	body
 -------------------------------- */
-html {}
-body {}
+html,
+body {
+  background-color: var(--body-bg);
+  /* color: var(--common-text); */
+  font-family: Noto Sans JP, sans-serif;
+  /* padding-top: 50px; */
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  /* background: linear-gradient(to bottom, #fafcff, #ecf3fd) */
+}
 
+/*opa1のキーフレーム設定（汎用的）
+---------------------------------------------------------------------------*/
+@keyframes opa1 {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
 
+:root {
+  --body-bg: #ffffff;
+  --common-text: #6e6e6e;
+  --text-sub-gray: #666666;
+  --button-bg-brown: #e8e6df;
+  --primary_blue: #0e4e9a;
+  --primary_blue__50: rgb(14 78 154 / 50%);
+  --white: #ffffff;
+  --header-height: 80px;
+  --light-gray: #e6e6e6;
+}
 
 /* --------------------------------
 	コンテナ
@@ -29,68 +55,339 @@ body {}
 article#all_container { height:100%;}
 article#sub_container { height:100%;}
 
+/*リンク（全般）設定
+---------------------------------------------------------------------------*/
+a {
+  transition: 0.5s; /*マウスオン時の移り変わるまでの時間設定。0.5秒。*/
+}
+a:hover {
+  opacity: 0.7;
+}
 
 
 /* --------------------------------
 	ヘッダ
 -------------------------------- */
 
-header { padding:0;  width:1000px;position:relative; margin:0 0;margin:0 auto;}
-article#sub_container header { padding:0;  width:1000px;position:relative; margin:0 0;margin:0 auto;}
-#logo {  padding:0; margin:0 auto; text-align:left;}
-#logo h1 { padding:30px 0 0 0;}
-#logo p { padding:5px 0 10px 10px;}
-article#mainNavWrap { width:740px; }
-
-header p.tel { position:absolute; top:40px; right:0; width:130px;}
-
-.sliderBox { width:1160px; margin:0 auto;}
-p.discription { width:100%; background:#116cb5;
-box-shadow: 0 0 10px rgba(0,0,0,0.4);
--moz-box-shadow: 0 0 10px rgba(0,0,0,0.4);
--webkit-box-shadow: 0 0 10px rgba(0,0,0,0.4);
--o-box-shadow: 0 0 10px rgba(0,0,0,0.4);
--ms-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+@import "https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Noto+Sans+JP:wght@100..900&display=swap";
+.fixed[data-astro-cid-3ef6ksr2] {
+  position: fixed;
+  top: var(--scroll-y);
+  left: 0;
+  width: 100%;
+  height: 110%;
+  overflow: hidden;
 }
-p.discription span { width:1000px; text-align:right; margin:0 auto; display:block; color:#ffffff; font-size:75%; line-height:3em;}
-
-/* --------------------------------
-	グロナビ
--------------------------------- */
-
-nav#gnav .mainNav li.gnav01 span {color: #0962a8; font-weight: 700; font-size: x-large; }
-nav#gnav .mainNav li.gnav02 span { color: #cc3a26; font-weight: 700; font-size: x-large;}
-nav#gnav {
-  width: 1000px;
-  margin: 20px auto 0;
-  border-top: 1px solid #000000;
-  padding: 10px 0 0;
+button[data-astro-cid-3ef6ksr2],
+[data-astro-cid-3ef6ksr2][role="button"] {
+  cursor: pointer;
 }
 
-ul#dMenu {
-  margin-left: 34px;
+header {
+  /* overflow: hidden; */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  background: var(--white);
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 1em;
+  gap: 3em;
+  top: 0;
+}
+@media only screen and (max-width: 830px) {
+  header{
+    gap: 2.5vw;
+    padding: 0 2.5vw;
+  }
+}
+.header_logo[data-astro-cid-3ef6ksr2] {
+  height: 80%;
+  width: 150px;
+  margin-left: 1.5em;
+  transition: opacity 0.3s ease-in-out;
+}
+.header_logo[data-astro-cid-3ef6ksr2] img[data-astro-cid-3ef6ksr2] {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+@media only screen and (max-width: 830px) {
+  .header_logo[data-astro-cid-3ef6ksr2] {
+    margin-left: 0;
+  }
 }
 
-nav#gnav .mainNav li {
-  padding: 0;
-  float: left;
-  margin: 0 13px 40px 0; 
+@media only screen and (max-width: 486px) {
+  .header_logo[data-astro-cid-3ef6ksr2] {
+    margin-left: 0;
+    width: 30vw;
+  }
 }
 
-nav#gnav .mainNav li span {
-  transition: filter 0.1s ease;
+.header_logo[data-astro-cid-3ef6ksr2]:hover {
+  opacity: 0.5;
 }
 
-nav#gnav .mainNav li span:hover{
-filter: blur(0.5px);
+nav[data-astro-cid-3ef6ksr2] {
+  display: block;
 }
 
+ul[data-astro-cid-3ef6ksr2] {
+  display: flex;
+  /* justify-content: center; */
+  gap: 1em;
+  align-items: center;
+}
+
+nav[data-astro-cid-3ef6ksr2] ul[data-astro-cid-3ef6ksr2] ul{
+  position: absolute;
+  z-index: 100;
+}
+
+ul[data-astro-cid-3ef6ksr2] li:last-child {
+  margin-left: auto; 
+}
+
+ul[data-astro-cid-3ef6ksr2] li[data-astro-cid-3ef6ksr2]:not(:last-child) {
+  text-align: center;
+  margin: 0 2.5em;
+}
+
+@media screen and (max-width: 1241px) and (orientation: portrait) {
+  ul[data-astro-cid-3ef6ksr2] {
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  ul[data-astro-cid-3ef6ksr2] li[data-astro-cid-3ef6ksr2]:not(:last-of-type) {
+    display: none;
+  }
+  
+}
+
+@media screen and (max-width: 1241px) and (orientation: portrait) {
+  ul[data-astro-cid-3ef6ksr2] li[data-astro-cid-3ef6ksr2]:not(:last-of-type) {
+    display: none;
+  }
+}
+
+ul[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2] {
+  color: var(--primary_blue);
+  font-weight: 700;
+  font-size: 1em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  white-space: nowrap;
+}
+
+ul[data-astro-cid-3ef6ksr2] .navListicon:after {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-image: url(/common/img/homepage/icon_arrow_down_blue.svg);
+  background-size: contain;
+}
+
+@media only screen and (max-width: 486px) {
+  ul[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2] {
+    font-size: 0.75em;
+  }
+}
+ul[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 4px;
+  left: 0;
+  border-top: 1px solid var(--primary_blue);
+  transform-origin: center center;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+ul[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]:hover:before {
+  transform: scaleX(1);
+}
+
+ul[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].contact {
+  background-color: #cc3a26;
+  border: 1px solid #cc3a26;
+  width: 12.5em;
+  justify-content: center;
+  color: var(--white);
+  text-align: center;
+  padding: 0.5em 1.5em;
+  border-radius: 999px;
+  transition: all 0.2s ease-in-out;
+}
+/*  ここから下は画面幅1025px以上のナビ指定 */
+@media only screen and (max-width: 1025px) {
+  ul[data-astro-cid-3ef6ksr2] {
+    justify-content: space-between;
+  }
+
+  ul[data-astro-cid-3ef6ksr2] li[data-astro-cid-3ef6ksr2] {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  ul[data-astro-cid-3ef6ksr2] li[data-astro-cid-3ef6ksr2]:last-child {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+ul[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].contact:after {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-image: url(/common/img/homepage/icon_open_in_new_white.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease-in-out;
+}
+ul[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].contact:before {
+  display: none;
+}
+ul[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].contact:hover {
+  gap: 0.3em;
+}
+.mokuzou-logo[data-astro-cid-3ef6ksr2] {
+  width: 150px;
+  height: 80%;
+}
+.mokuzou-logo[data-astro-cid-3ef6ksr2] img[data-astro-cid-3ef6ksr2] {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+@media only screen and (max-width: 1025px) {
+  .mokuzou-logo[data-astro-cid-3ef6ksr2] {
+    display: none;
+  }
+}
+@media screen and (max-width: 1241px) and (orientation: portrait) {
+  .mokuzou-logo[data-astro-cid-3ef6ksr2] {
+    display: none;
+  }
+}
+.nav_open_btn[data-astro-cid-3ef6ksr2] {
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+}
+@media only screen and (max-width: 1025px) {
+  .nav_open_btn[data-astro-cid-3ef6ksr2] {
+    display: block;
+    height: 70%;
+    aspect-ratio: 1/1;
+  }
+  .nav_open_btn[data-astro-cid-3ef6ksr2] img[data-astro-cid-3ef6ksr2] {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 1241px) and (orientation: portrait) {
+  .nav_open_btn[data-astro-cid-3ef6ksr2] {
+    display: block;
+    height: 70%;
+    aspect-ratio: 1/1;
+  }
+  .nav_open_btn[data-astro-cid-3ef6ksr2] img[data-astro-cid-3ef6ksr2] {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+  }
+}
+.nav_open_btn[data-astro-cid-3ef6ksr2]:hover {
+  opacity: 0.5;
+}
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
+  all: unset;
+  display: revert;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+a,
+button {
+  cursor: revert;
+}
+ol,
+ul,
+menu {
+  list-style: none;
+}
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+table {
+  border-collapse: collapse;
+}
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+textarea {
+  white-space: revert;
+}
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+:where(pre) {
+  all: revert;
+}
+::placeholder {
+  color: unset;
+}
+
+::marker {
+  content: initial;
+}
+
+:where([hidden]) {
+  display: none;
+}
+
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+:where(dialog:modal) {
+  all: revert;
+}
+/*ドロップメニュー設定
+---------------------------------------------------------------------------*/
 .dropmenu {
-  *zoom: 1;
   list-style-type: none;
 }
 
-.dropmenu:before, .dropmenu:after {
+.dropmenu:before,
+.dropmenu:after {
   content: "";
   display: table;
 }
@@ -111,13 +408,14 @@ filter: blur(0.5px);
   margin: 0;
   background: #ffffff;
   color: #333333;
-  font-size: 16px; 
-  line-height: 40px; 
-  padding: 10px 4px; 
+  font-size: 16px;
+  /* line-height: 40px; */
+  padding: 10px 4px;
   text-decoration: none;
 }
 
 .dropmenu li ul {
+  display: none;
   list-style: none;
   position: absolute;
   z-index: 9999;
@@ -125,37 +423,259 @@ filter: blur(0.5px);
   left: 0;
   margin: 0;
   padding: 0;
-  width: 200px; 
+  width: 140px;
+  animation: opa1 0.5s 0.1s both;
+}
+.dropmenu li .dropmenuCon {
+ left: 25%;
 }
 
+.dropmenu li:hover ul {
+  display: block;
+}
 nav#gnav .mainNav.dropmenu li ul li {
   width: 100%;
   margin: 0;
 }
 
 .dropmenu li ul li a {
-  padding: 10px 20px; 
+  padding: 10px 20px;
+  /* border-radius: 100px; */
   border-top: 1px solid #eeeeee;
   background: #ffffff;
   text-align: left;
 }
-
-.dropmenu li:hover > a{
+.dropmenu li ul li a:hover{
+  /* text-decoration: underline; */
+  opacity: 1;
+  color: var(--primary_blue);
+  background: #ecf3fd; /*背景色*/
+}
+nav#gnav .dropmenu li:hover > a {
   background: #ffffff;
 }
-.dropmenu li a:hover{
+#gnav .dropmenu li a:hover {
   background: #ffffff;
 }
+/* --------------------------------
+ 1024px以下の開閉ブロック
+-------------------------------- */
 
-#dMenu li ul li {
+.fixed[data-astro-cid-ttztgwaq] {
+  position: fixed;
+  top: var(--scroll-y);
+  left: 0;
+  width: 100%;
+  height: 110%;
   overflow: hidden;
-  height: 0;
-  transition: .2s;
 }
 
-#dMenu li:hover ul li {
+button[data-astro-cid-ttztgwaq],
+[data-astro-cid-ttztgwaq][role="button"] {
+  cursor: pointer;
+}
+
+section[data-astro-cid-ttztgwaq] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background-color: #7d7d7db3;
+  backdrop-filter: blur(10px);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease-out;
+}
+
+section[data-astro-cid-ttztgwaq].__hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-out;
+}
+
+.dialog__bglayer[data-astro-cid-ttztgwaq] {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+button[data-astro-cid-ttztgwaq] {
+  height: calc(var(--header-height) * 0.5);
+  width: calc(var(--header-height) * 0.5);
+  position: absolute;
+  top: calc(var(--header-height) * 0.25);
+  right: calc(var(--header-height) * 0.25);
+  max-width: 30px;
+  min-height: 30px;
+  z-index: 1001;
+  aspect-ratio: 1/1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+button[data-astro-cid-ttztgwaq] img[data-astro-cid-ttztgwaq] {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+button[data-astro-cid-ttztgwaq]:hover {
+  opacity: 0.5;
+}
+
+.dialog__container[data-astro-cid-ttztgwaq] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  max-width: 85%;
+  max-height: 100vh;
+  height: 100vh;
+  z-index: 1000;
+}
+
+nav[data-astro-cid-ttztgwaq] {
+  background: var(--white);
+  filter: drop-shadow(-1em 1em 1em rgba(0, 0, 0, 0.1));
+  padding: 4em 1em 1em;
+  flex-grow: 1;
+  flex-basis: 0;
+  overflow-y: scroll;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: strech;
+  align-items: center;
+  gap: 3em;
+}
+
+.brand_logo_link[data-astro-cid-ttztgwaq] {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  flex-basis: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.brand_logo_link[data-astro-cid-ttztgwaq]:hover {
+  opacity: 0.5;
+}
+
+.brand_logo[data-astro-cid-ttztgwaq] {
+  margin: 0 auto;
+  display: block;
+  width: 65%;
+  height: 100%;
+  object-fit: contain;
+}
+
+ul[data-astro-cid-ttztgwaq] {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
   overflow: visible;
-  height: 40px;
+}
+
+ul[data-astro-cid-ttztgwaq]
+  li[data-astro-cid-ttztgwaq]
+  a[data-astro-cid-ttztgwaq] {
+  position: relative;
+  color: var(--primary_blue);
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+}
+
+ul[data-astro-cid-ttztgwaq]
+  li[data-astro-cid-ttztgwaq] .dropdowns:after {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-image: url("data:image/svg+xml,%3c?xml%20version='1.0'?%3e%3csvg%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cmask%20id='mask0_15_342'%20style='mask-type:alpha'%20maskUnits='userSpaceOnUse'%20x='0'%20y='0'%20width='16'%20height='16'%3e%3crect%20width='16'%20height='16'%20fill='%23D9D9D9'%20/%3e%3c/mask%3e%3cg%20mask='url(%23mask0_15_342)'%3e%3cpath%20d='M8%2010.2667L4%206.26668L4.93333%205.33334L8%208.40001L11.0667%205.33334L12%206.26668L8%2010.2667Z'%20fill='%230E4E9A'%20/%3e%3c/g%3e%3c/svg%3e");
+  background-size: contain;
+}
+
+ul[data-astro-cid-ttztgwaq]
+  li[data-astro-cid-ttztgwaq]
+  a[data-astro-cid-ttztgwaq]:before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  bottom: -0.25em;
+  left: 25%;
+  border-top: 1px solid var(--primary_blue);
+  transform-origin: center center;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+ul[data-astro-cid-ttztgwaq]
+  li[data-astro-cid-ttztgwaq]
+  a[data-astro-cid-ttztgwaq]:hover:before {
+  transform: scaleX(1);
+}
+
+ul[data-astro-cid-ttztgwaq]
+  li[data-astro-cid-ttztgwaq]
+  a[data-astro-cid-ttztgwaq].contact {
+  background-color: #cc3a26;
+  color: var(--white);
+  text-align: center;
+  padding: 0.5em 1.5em;
+  border-radius: 999px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  flex-basis: 300px;
+  width: 300px;
+}
+
+ul[data-astro-cid-ttztgwaq]
+  li[data-astro-cid-ttztgwaq]
+  a[data-astro-cid-ttztgwaq].contact
+  em[data-astro-cid-ttztgwaq] {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  font-size: 1.2em;
+}
+
+ul[data-astro-cid-ttztgwaq]
+  li[data-astro-cid-ttztgwaq]
+  a[data-astro-cid-ttztgwaq].contact
+  span[data-astro-cid-ttztgwaq] {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  font-size: 0.75em;
+}
+
+ul[data-astro-cid-ttztgwaq]
+  li[data-astro-cid-ttztgwaq]
+  a[data-astro-cid-ttztgwaq].contact:after {
+  content: "";
+  grid-column: 2/3;
+  grid-row: 1/3;
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-image: url("data:image/svg+xml,%3c?xml%20version='1.0'?%3e%3csvg%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cmask%20id='mask0_15_362'%20style='mask-type:alpha'%20maskUnits='userSpaceOnUse'%20x='0'%20y='0'%20width='16'%20height='16'%3e%3crect%20width='16'%20height='16'%20fill='%23D9D9D9'%20/%3e%3c/mask%3e%3cg%20mask='url(%23mask0_15_362)'%3e%3cpath%20d='M3.33333%2014C2.96667%2014%202.65278%2013.8694%202.39167%2013.6083C2.13056%2013.3472%202%2013.0333%202%2012.6667V3.33333C2%202.96667%202.13056%202.65278%202.39167%202.39167C2.65278%202.13056%202.96667%202%203.33333%202H8V3.33333H3.33333V12.6667H12.6667V8H14V12.6667C14%2013.0333%2013.8694%2013.3472%2013.6083%2013.6083C13.3472%2013.8694%2013.0333%2014%2012.6667%2014H3.33333ZM6.46667%2010.4667L5.53333%209.53333L11.7333%203.33333H9.33333V2H14V6.66667H12.6667V4.26667L6.46667%2010.4667Z'%20fill='white'%20/%3e%3c/g%3e%3c/svg%3e");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+ul[data-astro-cid-ttztgwaq]
+  li[data-astro-cid-ttztgwaq]
+  a[data-astro-cid-ttztgwaq].contact:before {
+  display: none;
 }
 
 /* --------------------------------
