@@ -13,15 +13,17 @@
  */
 
 get_header(); ?>
-
-<article id="mainVI">
-  <ul class="service__list">
-    <li><a href="/bi/"><img src="/common/img/banner01.png" width="490" style="opacity: 1;" alt=""></a></li>
-    <li><a href="/mokuzou/"><img src="/common/img/banner02.png" width="490" alt=""></a></li>
-    <li><a href="/robot/"><img src="/common/img/banner03.png" width="490" alt=""></a></li>
-    <li><a href="/robot/"><img src="/common/img/banner04.png" width="490" alt=""></a></li>
-  </ul>
-</article>
+<link rel="stylesheet" href="/common/css/slide.css">
+<div class="topTitle">
+  <h1>建築・建設業のお悩みをDXで解決します!!</h1>
+</div>
+<!--スライドショー-->
+<div class="mainimg">
+  <div><img src="/common/img/homepage/top-page_01.png" alt="" /></div>
+  <div><img src="/common/img/homepage/top-page_02.png" alt="" /></div>
+  <div><img src="/common/img/homepage/top-page_03.png" alt="" /></div>
+  <div><img src="/common/img/homepage/top-page_04.png" alt="" /></div>
+</div>
 <!-- 追加 -->
 <article id="mainWrap">
   <article id="contentsWrap" class="topWrap">
@@ -111,3 +113,14 @@ get_header(); ?>
   </article>
 </article>
 <?php get_footer(); ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+  });
+</script>
+<!--jQueryファイルの読み込み-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--スライドショー（slick）-->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="/common/js/slick.js"></script>

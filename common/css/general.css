@@ -12,7 +12,9 @@
 
 /* @import "global.css"; */
 
-
+/*slick.cssの読み込み
+---------------------------------------------------------------------------*/
+@import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
 
 /* --------------------------------
 	body
@@ -456,6 +458,80 @@ nav#gnav .dropmenu li:hover > a {
 }
 #gnav .dropmenu li a:hover {
   background: #ffffff;
+}
+/* --------------------------------
+ ホームページ　タイトル
+-------------------------------- */
+.topTitle {
+  text-align: center;
+
+}
+.topTitle h1 {
+  font-weight: bold;
+  font-size: 3em;
+  margin-top: 90px;
+}
+/*スライドショー（slickを使用）
+---------------------------------------------------------------------------*/
+.mainimg {
+  position: relative;
+  top: 20px;
+  margin: 0 0 81px;
+}
+@media screen and (max-width:1025px) {
+  .mainimg {
+    margin: 0 auto; 
+    width: 142%; 
+    left: 29%;
+    transform: translateX(-50%); 
+    position: relative; 
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .slick-dots {
+    left: 16%; 
+  }
+
+}
+
+/*丸いページナビボタン全体を囲むブロック*/
+.slick-dots {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  position: absolute;
+  bottom: 0px; /*下からの配置場所指定*/
+}
+
+/*丸いページナビボタン１個あたりの設定*/
+.slick-dots li {
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/*buttonタグ*/
+.slick-dots li button {
+  display: block;
+  padding: 0;
+  border: none;
+  border: 1px solid #555; /*枠線の幅、線種、色*/
+  text-indent: -9999px; /*デフォルトで文字が出るので画面の外に追い出す指定*/
+  width: 12px; /*ボタンの幅*/
+  height: 12px; /*ボタンの高さ*/
+  border-radius: 50%; /*丸くする指定*/
+  background: #fff; /*背景色。白。*/
+}
+
+/*buttonのアクティブ時（現在表示されている画像を示すボタン）*/
+.slick-dots li.slick-active button {
+  background: #555; /*色*/
 }
 /* --------------------------------
  1024px以下の開閉ブロック
