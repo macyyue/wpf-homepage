@@ -472,6 +472,21 @@ nav#gnav .dropmenu li:hover > a {
   font-size: 3em;
   margin-top: 90px;
 }
+@media screen and (max-width:1025px) {
+  .topTitle h1 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width:690px) {
+  .topTitle h1 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width:414px) {
+  .topTitle h1 {
+    font-size: 1em;
+  }
+}
 /*スライドショー（slickを使用）
 ---------------------------------------------------------------------------*/
 .mainimg {
