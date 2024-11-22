@@ -44,29 +44,29 @@
 </footer>
 
 <!-- /#all_container --></article>
-<p id="page-top"><a href="#top">上へ戻る</a></p>
+<p id="page-top"><a href="#top"><img src="/common/img/homepage/backtop.Phc7XCNW_Z67Kf1.svg" alt=""></a></p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
-
 $(function() {
-	var showFlag = false;
-	var topBtn = $('#page-top');
-	topBtn.css('bottom', '-100px');
-	var showFlag = false;
-	//スクロールが100に達したらボタン表示
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100) {
-			if (showFlag == false) {
-				showFlag = true;
-				topBtn.stop().animate({'bottom' : '20px'}, 100);
+		var showFlag = false; 
+		var topBtn = $('#page-top'); 
+		topBtn.css({'opacity': '0', 'visibility': 'hidden'}); 
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 100) {
+				if (showFlag == false) {
+					showFlag = true;
+					topBtn.stop().css('visibility', 'visible').animate({'opacity': '1'}, 300); // 渐显按钮
+				}
+			} else {
+				if (showFlag) {
+					showFlag = false;
+					topBtn.stop().animate({'opacity': '0'}, 300, function() {
+						topBtn.css('visibility', 'hidden');
+					});
+				}
 			}
-		} else {
-			if (showFlag) {
-				showFlag = false;
-				topBtn.stop().animate({'bottom' : '-100px'}, 100);
-			}
-		}
+		});
 	});
-});
 </script>
 
 
