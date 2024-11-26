@@ -11,7 +11,8 @@
 /*slick.cssの読み込み
 ---------------------------------------------------------------------------*/
 @import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
-
+/* indexbannerタイル用 */
+@import url("inview.css");
 /* --------------------------------
 	body
 -------------------------------- */
@@ -1538,7 +1539,7 @@ p.btn {
   background-color: #cc3a26;
   border-top: 10px solid #cc3a26;
 }
-.sideWrap dl dd , .sideWrap ul li{
+.sideWrap dl dd, .sideWrap ul li{
   border: 1px solid #dddddd;
   line-height: 2.5em;
   padding: 0 0;
@@ -1594,7 +1595,6 @@ p.btn {
 @media (max-width: 1040px) {
   .sideWrap {
     max-width: 760px;
-    /* margin: 0; */
   }
   .sideWrap dl dt , .sideWrap dl dd{
     text-align: center;
@@ -1607,7 +1607,6 @@ p.btn {
   }
   .sideWrap {
     max-width: 100%;
-    /* margin: 0; */
   }
 }
 
