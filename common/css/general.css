@@ -50,6 +50,30 @@ body {
   --header-height: 80px;
   --light-gray: #e6e6e6;
 }
+/*slide1のキーフレーム設定（footer背景に使用）
+---------------------------------------------------------------------------*/
+@keyframes slide1 {
+  0% {
+    background-position: center bottom;
+  }
+  50% {
+    background-position: 50px bottom;
+  }
+  100% {
+    background-position: center bottom;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  :root {
+    --header-height: 7.5vw;
+  }
+}
+@media only screen and (max-width: 486px) {
+  :root {
+    --header-height: 12.5vw;
+  }
+}
 
 /* --------------------------------
 	コンテナ
@@ -845,7 +869,7 @@ article#contentsWrap #contents {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 100px;
+  margin-top: 60px;
   padding: 20px;
   justify-content: center;
 }
@@ -1596,7 +1620,7 @@ p.btn {
   .sideWrap {
     max-width: 760px;
   }
-  .sideWrap dl dt , .sideWrap dl dd{
+  .sideWrap dl dt , .sideWrap dl dd, .sideWrap ul li{
     text-align: center;
   }
 }
@@ -1693,6 +1717,11 @@ p.btn {
   margin: 0 0 0;
   line-height: 1.2em;
 }
+@media screen and (max-width:480px) {
+  .recruitWrap h3 {
+    font-size: 80%;
+  }
+}
 .recruitWrap h3 span {
   font-size: 75%;
   font-weight: bold;
@@ -1701,12 +1730,13 @@ p.btn {
 }
 .recruitWrap h5 {
   clear: both;
-  font-size: 100%;
+  font-size: 125%;
   font-weight: bold;
-  background: #074c84;
+  background: #116cb5;
   line-height: 2em;
   text-indent: 0.5em;
   color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
   -webkit-border-radius: 5px 5px 0px 0px / 5px 5px 0px 0px;
   -moz-border-radius: 5px 5px 0px 0px / 5px 5px 0px 0px;
   border-radius: 5px 5px 0px 0px / 5px 5px 0px 0px;
@@ -1727,10 +1757,24 @@ p.btn {
 
 .recruitWrap table {
   width: 100%;
+  padding: 0 0 40px;
+}
+.recruitContent {
+  width: 127%;
   font-size: 87.5%;
   padding: 0 0 40px;
 }
-.recruitWrap table tr {
+@media screen and (max-width: 1040px) {
+  .recruitContent {
+    width: 100%; 
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .recruitContent {
+    width: 100%; 
+    padding: 0 5px;
+  }
 }
 .recruitWrap table th {
   width: 12em;
@@ -1775,6 +1819,11 @@ p.btn {
   clear: both;
   height: 1px;
   overflow: hidden;
+}
+@media screen and (max-width:430px) {
+  .recruitWrap table th{
+    width: 8em;
+  }
 }
 
 /*\*/
@@ -1836,12 +1885,11 @@ p.btn {
   padding: 4px 10px;
   color: #fff;
   cursor: pointer;
-  background: #428ec9;
+  background: #116cb5;
   border-radius: 5px;
   font-size: 125%;
 }
-.inquiryWrap {
-}
+
 .inquiryWrap dl.formList {
   padding: 0 0 10px;
 }
