@@ -2,7 +2,7 @@
 
 /*
 	--------------------------------
-	更新日: 2012-12-25
+	更新日: 2024-12-05
 	--------------------------------
 */
 
@@ -11,6 +11,7 @@
 /*slick.cssの読み込み
 ---------------------------------------------------------------------------*/
 @import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+
 /* indexbannerタイル用 */
 @import url("inview.css");
 /* --------------------------------
@@ -19,26 +20,11 @@
 html,
 body {
   background-color: var(--body-bg);
-  /* color: var(--common-text); */
   font-family: Noto Sans JP, sans-serif;
-  /* padding-top: 50px; */
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  /* background: linear-gradient(to bottom, #fafcff, #ecf3fd) */
 }
-
-/*opa1のキーフレーム設定（汎用的）
----------------------------------------------------------------------------*/
-@keyframes opa1 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 :root {
   --body-bg: #ffffff;
   --common-text: #6e6e6e;
@@ -50,17 +36,14 @@ body {
   --header-height: 80px;
   --light-gray: #e6e6e6;
 }
-/*slide1のキーフレーム設定（footer背景に使用）
+/*opa1のキーフレーム設定（汎用的）
 ---------------------------------------------------------------------------*/
-@keyframes slide1 {
+@keyframes opa1 {
   0% {
-    background-position: center bottom;
-  }
-  50% {
-    background-position: 50px bottom;
+    opacity: 0;
   }
   100% {
-    background-position: center bottom;
+    opacity: 1;
   }
 }
 
@@ -112,7 +95,7 @@ button[data-astro-cid-3ef6ksr2],
 [data-astro-cid-3ef6ksr2][role="button"] {
   cursor: pointer;
 }
-
+/* ヘッダのナビブロック設定 */
 header {
   /* overflow: hidden; */
   display: grid;
@@ -511,6 +494,16 @@ nav#gnav .dropmenu li:hover > a {
   .topTitle h1 {
     font-size: 1em;
   }
+}
+/*詳細スライドショー設定
+---------------------------------------------------------------------------*/
+
+.slick-slide img {
+  cursor: pointer; /*リンクタグではないが、クリックできる事をわかりやすくする為にリンクと同じポインターにしておきます。*/
+  transition: 0.5s; /*マウスオンまでにかける時間。3秒。*/
+}
+.slick-slide img:hover {
+  opacity: 0.8; /*マウスオン時に80%だけ色を出す。つまり薄くなります。*/
 }
 /*スライドショー（slickを使用）
 ---------------------------------------------------------------------------*/
@@ -2173,7 +2166,30 @@ p.btn {
   padding: 20px;
   margin-bottom: 20px;
 }
-.pdflistWrap {
+/* リリースブロック設定 */
+
+.releaselistWrap h2 {
+  font-size: 125%;
+  font-weight: bold;
+  background: #116cb5;
+  border-radius: 5px;
+  line-height: 2em;
+  text-indent: 0.5em;
+  color: #ffffff;
+}
+.releaselistWrap h4 {
+  font-size: 125%;
+  font-weight: bold;
+  color: #116cb5;
+}
+.releaselistWrap h4 a {
+  color: #116cb5;
+}
+.releaselistWrap .releaselistBox {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 .pdflistWrap h2 {
   font-size: 125%;

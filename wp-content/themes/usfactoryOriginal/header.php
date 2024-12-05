@@ -76,7 +76,6 @@
 <header>
 	<a
         href="/"
-        target="_blank"
         class="header_logo"
         data-astro-cid-3ef6ksr2
       >
