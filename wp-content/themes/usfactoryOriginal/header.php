@@ -143,6 +143,7 @@
         />
       </button>
     </header>
+    <!-- 1024px以下の開閉ブロック -->
   <section id="dialogNav" class="dialog __hidden" data-astro-cid-ttztgwaq>
   <div
     class="dialog__bglayer"

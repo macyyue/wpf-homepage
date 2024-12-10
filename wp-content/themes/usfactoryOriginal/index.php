@@ -174,6 +174,7 @@ get_header(); ?>
               <li><a href="/recruit/">採用情報<span>Recruit</span></a></li>
               <li><a href="/inquiry/">お問い合わせ<span>Contact</span></a></li>
             </ul>
+
           </div>
         </aside>
       </article>

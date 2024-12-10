@@ -57,6 +57,77 @@ body {
     --header-height: 12.5vw;
   }
 }
+/* --------------------------
+  CSSリセット
+  --------------------------- */
+  *:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
+  all: unset;
+  display: revert;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+a,
+button {
+  cursor: revert;
+}
+ol,
+ul,
+menu {
+  list-style: none;
+}
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+table {
+  border-collapse: collapse;
+}
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+textarea {
+  white-space: revert;
+}
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+:where(pre) {
+  all: revert;
+}
+::placeholder {
+  color: unset;
+}
+
+::marker {
+  content: initial;
+}
+
+:where([hidden]) {
+  display: none;
+}
+
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+:where(dialog:modal) {
+  all: revert;
+}
 
 /* --------------------------------
 	コンテナ
@@ -79,10 +150,9 @@ a:hover {
 }
 
 /* --------------------------------
-	ヘッダ
+	ヘッダのナビブロック設定
 -------------------------------- */
 
-@import "https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Noto+Sans+JP:wght@100..900&display=swap";
 .fixed[data-astro-cid-3ef6ksr2] {
   position: fixed;
   top: var(--scroll-y);
@@ -95,9 +165,7 @@ button[data-astro-cid-3ef6ksr2],
 [data-astro-cid-3ef6ksr2][role="button"] {
   cursor: pointer;
 }
-/* ヘッダのナビブロック設定 */
 header {
-  /* overflow: hidden; */
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -151,7 +219,6 @@ nav[data-astro-cid-3ef6ksr2] {
 
 ul[data-astro-cid-3ef6ksr2] {
   display: flex;
-  /* justify-content: center; */
   gap: 1em;
   align-items: center;
 }
@@ -324,74 +391,6 @@ ul[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].contact:hover {
 .nav_open_btn[data-astro-cid-3ef6ksr2]:hover {
   opacity: 0.5;
 }
-*:where(
-    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
-  ) {
-  all: unset;
-  display: revert;
-}
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-a,
-button {
-  cursor: revert;
-}
-ol,
-ul,
-menu {
-  list-style: none;
-}
-img {
-  max-inline-size: 100%;
-  max-block-size: 100%;
-}
-table {
-  border-collapse: collapse;
-}
-input,
-textarea {
-  -webkit-user-select: auto;
-}
-textarea {
-  white-space: revert;
-}
-meter {
-  -webkit-appearance: revert;
-  appearance: revert;
-}
-:where(pre) {
-  all: revert;
-}
-::placeholder {
-  color: unset;
-}
-
-::marker {
-  content: initial;
-}
-
-:where([hidden]) {
-  display: none;
-}
-
-:where([contenteditable]:not([contenteditable="false"])) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
-  -webkit-user-select: auto;
-}
-
-:where([draggable="true"]) {
-  -webkit-user-drag: element;
-}
-
-:where(dialog:modal) {
-  all: revert;
-}
 /*ドロップメニュー設定
 ---------------------------------------------------------------------------*/
 .dropmenu {
@@ -470,7 +469,7 @@ nav#gnav .dropmenu li:hover > a {
   background: #ffffff;
 }
 /* --------------------------------
- ホームページ　タイトル
+ トップページのタイトル設定
 -------------------------------- */
 .topTitle {
   text-align: center;
@@ -505,8 +504,6 @@ nav#gnav .dropmenu li:hover > a {
 .slick-slide img:hover {
   opacity: 0.8; /*マウスオン時に80%だけ色を出す。つまり薄くなります。*/
 }
-/*スライドショー（slickを使用）
----------------------------------------------------------------------------*/
 .mainimg {
   position: relative;
   top: 20px;
@@ -539,10 +536,9 @@ nav#gnav .dropmenu li:hover > a {
   padding: 0;
   line-height: 1;
   position: absolute;
-  bottom: 0px; /*下からの配置場所指定*/
+  bottom: 0px;
 }
 
-/*丸いページナビボタン１個あたりの設定*/
 .slick-dots li {
   display: inline-block;
   margin: 0 10px;
@@ -569,7 +565,6 @@ nav#gnav .dropmenu li:hover > a {
 /* --------------------------------
  1024px以下の開閉ブロック
 -------------------------------- */
-
 .fixed[data-astro-cid-ttztgwaq] {
   position: fixed;
   top: var(--scroll-y);
@@ -790,14 +785,14 @@ ul[data-astro-cid-ttztgwaq]
 	サイドナビ
 -------------------------------- */
 
-nav#snav {
+/* nav#snav {
   width: 260px;
   float: right;
   margin-top: 20px;
 }
 nav#snav dl {
   padding: 0 0 20px;
-}
+} */
 
 /* --------------------------------
 	メインラップ
@@ -812,9 +807,9 @@ article#mainVI {
 }
 article#mainVI ul {
   /* width: 1000px; */
-  display: flex; /* 使用 Flexbox 布局 */
-  flex-wrap: wrap; /* 允许换行 */
-  justify-content: space-between; /* 平均分布 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
   margin: 0 auto;
 }
@@ -1240,6 +1235,19 @@ p.btn {
   border-radius: 10px; /*角丸の指定*/
   margin-bottom: 20px; /*ボックスの下(外側)に空けるスペース*/
 }
+.widget-area {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.no-widgets {
+  color: #999;
+  font-style: italic;
+  margin-top: 10px;
+}
+
 
 /* 情報エリアのスタイル */
 #sub {
@@ -1253,7 +1261,7 @@ p.btn {
 }
 #sub a img {
   width: 100%; /* 幅を全体に適応 */
-  border-radius: 5px; /* 角丸 */
+  /* border-radius: 5px;  */
 }
 #sub li:hover {
   transform: scale(1); /* ホバー時に拡大 */
