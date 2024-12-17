@@ -154,8 +154,8 @@ get_header(); ?>
           <div id="sub">
           <address class="box">
               <!-- <h2>BIM建設講座</h2> -->
-              <a href="https://events.teams.microsoft.com/event/d2f041f0-2124-4e4d-ad6f-16f1ae81e6f8@9143b3f8-6101-47ea-bf82-d9e923b6a88e" target="_blank">
-                <img src="common/img/20241128_05_webinar.png" />
+              <a href="https://events.teams.microsoft.com/event/47ff8f7d-3065-4563-915b-a9e202ffa4c9@9143b3f8-6101-47ea-bf82-d9e923b6a88e" target="_blank">
+                <img src="common/img/20250110_06_webinar.png" />
               </a>
               <a href="/inquiry/" target="_blank">
                 <img src="common/img/banner_campaign_AI-Structure_20241010.png" />
