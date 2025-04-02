@@ -11,7 +11,6 @@
  *
  * @package usfactory
  */
-
 get_header(); ?>
 <link rel="stylesheet" href="/common/css/slide.css">
 <div class="topTitle">
@@ -24,9 +23,12 @@ get_header(); ?>
   <div><img src="/common/img/homepage/top-page_03.png" alt="" /></div>
   <div><img src="/common/img/homepage/top-page_04.png" alt="" /></div>
 </div>
-<!-- 追加 -->
- <div id="container">
- <main>
+<!-- <div class="eng" role="presentation" data-astro-cid-utstonhj>
+ <span data-astro-cid-utstonhj>建築・建設業のお悩みをDXで解決します！</span>
+ <span data-astro-cid-utstonhj>建築・建設業のお悩みをDXで解決します！</span>
+</div> -->
+<div id="container">
+  <main>
     <!-- service -->
     <section>
       <h2>Service<span>サービス</span></h2>
@@ -154,8 +156,8 @@ get_header(); ?>
           <div id="sub">
           <address class="box">
               <!-- <h2>BIM建設講座</h2> -->
-              <a href="https://events.teams.microsoft.com/event/47ff8f7d-3065-4563-915b-a9e202ffa4c9@9143b3f8-6101-47ea-bf82-d9e923b6a88e" target="_blank">
-                <img src="common/img/20250110_06_webinar.png" />
+              <a href="">
+                <img src="common/img/20241128_05_webinar.png" />
               </a>
               <a href="/inquiry/" target="_blank">
                 <img src="common/img/banner_campaign_AI-Structure_20241010.png" />
@@ -174,14 +176,12 @@ get_header(); ?>
               <li><a href="/recruit/">採用情報<span>Recruit</span></a></li>
               <li><a href="/inquiry/">お問い合わせ<span>Contact</span></a></li>
             </ul>
-
           </div>
         </aside>
       </article>
     </section>
   </main>
- </div>
-
+</div>
 <?php get_footer(); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
@@ -190,10 +190,10 @@ get_header(); ?>
   });
 </script>
 <!--jQueryファイルの読み込み-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 <!--スライドショー（slick）-->
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="/common/js/slick.js"></script>
+<script src="/commonetest/js/slick.js"></script>
 <!--パララックス（inview）-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
-<script src="/common/js/jquery.inview_set.js"></script>
+<script src="/commontest/js/jquery.inview_set.js"></script>

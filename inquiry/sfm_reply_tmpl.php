@@ -26,6 +26,9 @@ $replyMessage = <<< EOD
 ■ご連絡先メールアドレス
 {$sfm_mail->email}
 
+■ご連絡先メールアドレス確認
+{$sfm_mail->cemail}
+
 ■ご連絡先電話番号
 {$sfm_mail->tel01}-{$sfm_mail->tel02}-{$sfm_mail->tel03}
 

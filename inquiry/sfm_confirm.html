@@ -1,7 +1,7 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] ."/temp/header.php") ?>
 
 <article class="mainContents inquiryWrap">
-<h2><img src="/common/img/inquiry/title.jpg" width="760" height="250" alt=""></h2>
+<h2><img src="/commontest/img/inquiry/title.jpg" width="760" height="250" alt=""></h2>
 <h3><span>CONTACT FORM</span></h3>
 <div class="formArea confirm">
 <p class="formTxt">下記お問い合わせ内容で送信してもよろしいでしょうか？<br />
@@ -15,6 +15,7 @@
 <dt>◯担当者名</dt><dd><?php echo $sfm_html->name; ?></dd>
 <dt>◯電話番号</dt><dd class="telbox"><?php echo $sfm_html->tel01; ?>-<?php echo $sfm_html->tel02; ?>-<?php echo $sfm_html->tel03; ?></dd>
 <dt>◯メールアドレス</dt><dd><?php echo $sfm_html->email; ?></dd>
+<dt>◯メールアドレス確認</dt><dd><?php echo $sfm_html->cemail; ?></dd>
 <dt>◯お問い合わせ件名</dt><dd><?php echo $sfm_html->subject; ?></dd>
 <dt>◯お問い合わせ内容</dt><dd><?php echo $sfm_html->message; ?></dd>
 </dl>

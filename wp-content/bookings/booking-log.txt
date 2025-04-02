@@ -1,0 +1,10 @@
+[2024-12-18 01:19:20] <p>予約内容が正常に送信されました。</p>
+            <p><strong>お名前:</strong> gaku</p>
+            <p><strong>メールアドレス:</strong> macyyue0118@gmail.com</p>
+            <p><strong>電話番号:</strong> 08035015209</p>
+            <p><strong>予約日時:</strong> 2024-12-21T12:21</p>
+[2024-12-18 06:47:47] <p>予約内容が正常に送信されました。</p>
+            <p><strong>お名前:</strong> gaku</p>
+            <p><strong>メールアドレス:</strong> macyyue0118@gmail.com</p>
+            <p><strong>電話番号:</strong> 08012345678</p>
+            <p><strong>予約日時:</strong> 2024-12-21T16:48</p>

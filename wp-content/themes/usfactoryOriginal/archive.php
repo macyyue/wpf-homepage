@@ -11,7 +11,7 @@ get_header(); ?>
 
 <article id="contentsWrap" class="subWrap">
 <article id="contents">
-<article class="mainContents mediaWrap">
+<article class="mainContents">
 		<?php if ( have_posts() ) : ?>
 
 				<?php

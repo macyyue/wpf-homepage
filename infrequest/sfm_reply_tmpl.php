@@ -1,7 +1,7 @@
 <?php
 
 // 自動返信のSubject（件名）
-$replySubject = 'お問い合わせありがとうございます。【株式会社U’s Factory】【自動返信メール】';
+$replySubject = 'お資料請求ありがとうございます。【株式会社U’s Factory】【自動返信メール】';
 
 //送信メッセージ
 $replyMessage = <<< EOD
@@ -14,23 +14,27 @@ $replyMessage = <<< EOD
 どうぞよろしくお願いいたします。
 
 ────────────────────────────────────
-■法人・団体名
-{$sfm_mail->cname}　様
-
-■法人・団体名（フリガナ）
-{$sfm_mail->ckana}　様
-
-■お名前
+■氏名
 {$sfm_mail->name}　様
 
-■ご連絡先メールアドレス
-{$sfm_mail->email}
+■部署名
+{$sfm_mail->ckana}
+
+■会社名
+{$sfm_mail->cname}
+
+■所在地
+{$sfm_mail->aname}
 
 ■ご連絡先電話番号
 {$sfm_mail->tel01}-{$sfm_mail->tel02}-{$sfm_mail->tel03}
 
-■お問い合わせ件名
+■ご連絡先メールアドレス
+{$sfm_mail->email}
+
+■お資料
 {$sfm_mail->subject}
+
 
 ■お問い合わせ内容
 {$sfm_mail->message}
@@ -47,6 +51,5 @@ mail： info@us-factory-sys.jp
 HP： http://us-factory.jp/
 □□□□□□□□□□□□□□□□□□□□□
 ────────────────────────────────────
-□ユーザー情報
-$sfm_userinfo
+
 EOD;

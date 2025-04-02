@@ -7,10 +7,10 @@
 </h2>
 <h3><span>資料請求フォーム</span></h3>
 <div class="formArea confirm">
-<p class="formTxt">下記お問い合わせ内容で送信してもよろしいでしょうか？<br />
+<p class="formTxt">下記ご選択内容で送信してもよろしいでしょうか？<br />
 よろしければ、一番下の「送信する」ボタンをクリックしてください。<br /><br />
 
-<span class="txtM">※お問い合わせ完了後、ご連絡先メールアドレス宛にお問い合わせ完了のご連絡メール（自動）を配信致しますので、ご連絡先メールアドレスにお間違えがないか、再度ご確認ください。</span></p>
+<span class="txtM">※ご請求完了後、ご連絡先メールアドレス宛にご請求完了のご連絡メール（自動）を配信致しますので、ご連絡先メールアドレスにお間違えがないか、再度ご確認ください。</span></p>
 <form method="post" name="form" id="form" action="<?php echo $sfm_script; ?>">
 <dl class="formList">
 <dt>◯会社名</dt><dd><?php echo $sfm_html->cname; ?>　様</dd>
@@ -18,9 +18,8 @@
 <dt>◯担当者名</dt><dd><?php echo $sfm_html->name; ?></dd>
 <dt>◯電話番号</dt><dd class="telbox"><?php echo $sfm_html->tel01; ?>-<?php echo $sfm_html->tel02; ?>-<?php echo $sfm_html->tel03; ?></dd>
 <dt>◯メールアドレス</dt><dd><?php echo $sfm_html->email; ?></dd>
-<dt>資料(パンフレット等)件名</dt><dd><?php echo $sfm_html->subject; ?></dd>
+<dt>◯お資料</dt><dd><?php echo $sfm_html->subject; ?></dd>
 <dt>◯お問い合わせ内容</dt><dd><?php echo $sfm_html->message; ?></dd>
-</dl>
 <p id="confirm-button" class="submit-container">
 <?php echo $sfm_submit; ?>
 </p>

@@ -9,7 +9,7 @@
 /* 基本設定 */
 
 // フォームデータを受け取るメールアドレス（$mailTo[0]は必須）
-$mailTo[0] = 'info@us-factory-sys.jp';
+$mailTo[0] = 'macyyue0118@gmail.com';
 $mailTo[1] = '';
 $mailTo[2] = '';
 
@@ -18,7 +18,6 @@ $baseEnc = 'UTF-8';
 
 // テキストの最大入力文字数
 $maxText = 2000;
-
 
 /* オプション設定（必要時のみ設定） */
 
@@ -29,7 +28,7 @@ $mailBcc = '';
 $replyBcc = '';
 
 // 自動返信時の送信元メールアドレス
-$replyAddress = 'info@us-factory-sys.jp';
+$replyAddress = 'macyyue0118@gmail.com';
 
 // 自動返信時の送信元メールアドレスに付加する名前
 $replyName = 'お問い合わせありがとうございます。【株式会社U’s Factory】【自動返信メール】';

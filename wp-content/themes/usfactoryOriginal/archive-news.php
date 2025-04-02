@@ -10,7 +10,6 @@
 get_header(); ?>
 
 <article id="mainWrap">
-
 <article id="contentsWrap" class="subWrap">
 <article id="contents">
 <article class="mainContents newslistWrap">
@@ -36,5 +35,6 @@ get_header(); ?>
 </article>
 </article>
 
-<!-- /#mainWrap --></article>
+<!-- /#mainWrap -->
+</article>
 <?php get_footer(); ?>

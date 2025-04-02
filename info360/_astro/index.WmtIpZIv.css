@@ -12,12 +12,27 @@ body {
   font-style: normal;
   /* background: linear-gradient(to bottom, #fafcff, #ecf3fd) */
 }
-
+a:hover{
+  opacity: 0.7;
+}
+a{
+  transition: 0.5s;
+}
 /*opa1のキーフレーム設定（汎用的）
 ---------------------------------------------------------------------------*/
 @keyframes opa1 {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
+}
+
+@keyframes kv-figure-animation {
+
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
 }
 
 :root {
@@ -97,7 +112,11 @@ ul[data-astro-cid-3ef6ksr2] {
   gap: 2em;
   align-items: center;
 }
-
+@media only screen and (max-width: 1280px) {
+  ul[data-astro-cid-3ef6ksr2] {
+    gap: 1em;
+  }
+}
 @media screen and (max-width: 1241px) and (orientation: portrait) {
   ul[data-astro-cid-3ef6ksr2] {
     justify-content: flex-end;
@@ -209,7 +228,7 @@ ul[data-astro-cid-3ef6ksr2] .navListicon:after {
   display: block;
   width: 1em;
   height: 1em;
-  background-image: url(/common/img/homepage/icon_arrow_down_blue.svg);
+  background-image: url(/commontest/img/homepage/icon_arrow_down_blue.svg);
   background-size: contain;
 }
 
@@ -546,10 +565,8 @@ figure[data-astro-cid-oh7sfoyt] img[data-astro-cid-oh7sfoyt] {
   height: 100%;
   max-width: 100%;
   max-height: 100%;
-  /* banner animation  */
-  /* object-fit: cover;
-  object-position: top right;
-  animation: 16s ease-in-out .2s 1 forwards kv-figure-animation; */
+  animation: 9s ease-out .2s 1 forwards kv-figure-animation
+  /* animation: 16s ease-out 0.2s 1 both kv-figure-animation; */
 }
 
 @media screen and (max-width: 1024px) {
@@ -562,15 +579,6 @@ figure[data-astro-cid-oh7sfoyt] img[data-astro-cid-oh7sfoyt] {
   figure[data-astro-cid-oh7sfoyt] {
     width: 95%;
     justify-self: center;
-  }
-}
-
-@keyframes kv-figure-animation {
-  0% {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.2);
   }
 }
 
@@ -1941,15 +1949,6 @@ ul[data-astro-cid-wxvbp6sc] li[data-astro-cid-wxvbp6sc] .tool-sub:hover {
   text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
-  .tool_btnBox[data-astro-cid-wxvbp6sc] {
-    justify-content: center;
-    align-items: center;
-    /* flex-direction: column; */
-    width: 90%;
-  }
-}
-
 @media (max-width: 1125px) {
   ul[data-astro-cid-wxvbp6sc] li[data-astro-cid-wxvbp6sc] .tool-sub {
     width: auto;
@@ -1973,7 +1972,12 @@ ul[data-astro-cid-wxvbp6sc] li[data-astro-cid-wxvbp6sc] .tool-sub:hover {
 
 @media only screen and (max-width: 486px) {
   .tool_btnBox a[data-astro-cid-wxvbp6sc] em[data-astro-cid-wxvbp6sc] {
-    font-size: 1em;
+    font-size: 0.8em;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .tool_btnBox a[data-astro-cid-wxvbp6sc] em[data-astro-cid-wxvbp6sc] {
+    font-size: 0.7em;
   }
 }
 
@@ -2850,7 +2854,7 @@ ul[data-astro-cid-ttztgwaq]
   gap: 0.25em;
 }
 
-ul[data-astro-cid-ttztgwaq]
+/* ul[data-astro-cid-ttztgwaq]
   li[data-astro-cid-ttztgwaq]
   a[data-astro-cid-ttztgwaq]:before {
   content: "";
@@ -2862,10 +2866,14 @@ ul[data-astro-cid-ttztgwaq]
   transform-origin: center center;
   transform: scaleX(0);
   transition: transform 0.2s ease-in-out;
-}
+} */
+ .dropmenuCon{
+  display: none;
+ }
 .dropmenu li .dropmenuCon {
   left: 25%;
  }
+ 
 ul[data-astro-cid-ttztgwaq]
   li[data-astro-cid-ttztgwaq]
   a[data-astro-cid-ttztgwaq]:hover:before {
