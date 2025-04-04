@@ -1281,11 +1281,11 @@ p.btn {
   ここから下は画面幅900px以上の追加指定
   ---------------------------------- */
 @media screen and (min-width: 900px) {
-  section,
+  /* section,
   main > article,
   .c2 {
     padding: 3% 80px;
-  }
+  } */
 
   body:not(.home) header #logo img {
     height: 75px;
@@ -2771,9 +2771,9 @@ figure.intTitle {
   width: 100%;
   position: relative;
 }
-figure.intTitle > img {
+figure.intTitle img {
   position: absolute;
-  top: -100px;
+  top: -81px;
   width: 120px;
   left: 20px;
   border: 3px solid #ffffff;

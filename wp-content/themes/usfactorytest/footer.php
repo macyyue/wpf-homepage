@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The template for displaying the footer.
  *
@@ -8,7 +7,6 @@
  * @package usfactory
  */
 ?>
-
 <footer>
 	<div class="footerItem">
 		<div class="ftBoxL">
@@ -43,7 +41,6 @@
 		<p class="credit">Copyright©2013-2025　U’sFactory All Rights Reserved.</p>
 	</div>
 </footer>
-
 <!-- /#all_container --></article>
 <p id="page-top"><a href="#top"><img src="/commontest/img/homepage/backtop.Phc7XCNW_Z67Kf1.svg" alt=""></a></p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
