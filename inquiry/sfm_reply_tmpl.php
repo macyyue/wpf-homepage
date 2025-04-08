@@ -1,5 +1,4 @@
 <?php
-
 // 自動返信のSubject（件名）
 $replySubject = 'お問い合わせありがとうございます。【株式会社U’s Factory】【自動返信メール】';
 

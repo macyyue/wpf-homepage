@@ -153,8 +153,8 @@ get_header(); ?>
         <h2>Information<span>会社情報</span></h2>
           <div id="sub">
           <address class="box">
-              <a href="https://events.teams.microsoft.com/event/9e7f9e85-861e-4e4f-a6a3-1c1b2adde5c5@9143b3f8-6101-47ea-bf82-d9e923b6a88e" target="_blank">
-                <img src="commontest/img/20250210_07_webinar.png" />
+              <a href="https://events.teams.microsoft.com/event/e56de676-ddcd-489a-ba7b-73d8d0a7b38c@9143b3f8-6101-47ea-bf82-d9e923b6a88e" target="_blank">
+                <img src="commontest/img/20250330_08_web.png" />
               </a>
               <!-- <a href="#">
                 <img src="commontest/img/20240830-162329.jpg" />

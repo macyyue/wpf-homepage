@@ -149,7 +149,6 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-
 wp_enqueue_style('pager-css', get_template_directory_uri() . '/layouts/pager.css');
 function mainpagination($pages, $paged, $range = 2, $show_only = false)
 {
@@ -175,7 +174,6 @@ function mainpagination($pages, $paged, $range = 2, $show_only = false)
     //２ページ以上の時
     echo '<div class="pagerWrap"><ul class="pagerList">';
 
-
     if ($paged == 1) {
       //echo '<li class="pagerBtn"><a class="pagerBtnStart none">最初へ</a></li>';
       echo '<li class="pagerBtn"><a class="pagerBtnLink prev none">PREV</a></li>';
@@ -183,14 +181,11 @@ function mainpagination($pages, $paged, $range = 2, $show_only = false)
       //  echo '<li class="pagerBtn"><a class="pagerBtnStart" href="', get_pagenum_link(1) ,'">最初へ</a></li>';
       echo '<li class="pagerBtn"><a class="pagerBtnLink prev" href="', get_pagenum_link($paged - 1), '">PREV</a></li>';
     }
-
     //リンク表示
     echo '<li class="pagerNumWrap">';
     $omitFlgBefore = false;
     $omitFlgAfter = false;
     for ($i = 1; $i <= $pages; $i++) {
-
-
       //最初と最後は必ず表示する
       if ($i == 1 || $i == $pages) {
         if ($paged === $i) {
@@ -232,7 +227,24 @@ function mainpagination($pages, $paged, $range = 2, $show_only = false)
     }
     echo '</ul></div>';
   }
-
   return ob_get_clean();
 }
+// ページジャンプ
+register_post_type('news', array(
+  'labels' => array(
+    'name' => '新着情報',
+    'singular_name' => 'News',
+  ),
+  'public' => true,
+  'has_archive' => true,
+  'rewrite' => array('slug' => 'news'),
+  'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+));
+function custom_news_posts_per_page($query) {
+  if (!is_admin() && $query->is_main_query() && is_post_type_archive('news')) {
+    $query->set('posts_per_page', 6);
+  }
+}
+add_action('pre_get_posts', 'custom_news_posts_per_page');
+
 

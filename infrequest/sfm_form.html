@@ -1,40 +1,172 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] ."/temp/header.php") ?>
 
 <article class="mainContents inquiryWrap">
-<!-- <h2><img src="/common/img/inquiry/title.jpg" width="760" height="250" alt=""></h2> -->
- <!-- <h2>資料請求TitleImg</h2> -->
-<h3><span>資料請求</span></h3>
-<div class="formArea">
-<form method="post" name="sfm-form" id="sfm-form" action="<?php echo $sfm_script; ?>">
-<dl class="formList">
-<dt>◯氏名(必須入力)</dt><dd><input type="text" name="name" id="name" /></dd>
-<dt>◯部署名</dt><dd><input type="text" name="ckana" id="ckana" /></dd>
-<dt>◯会社名(必須入力)</dt><dd class="namebox"><input type="text" name="cname_s" id="cname" /></dd>
-<dt>◯所在地(必須入力)</dt><dd class="namebox"><input type="text" name="aname_s" id="aname" /></dd>
-<dt>◯電話番号(必須入力)</dt><dd class="telbox"><input type="text" name="tel01_s" id="tel01" />-<input type="text" name="tel02_s" id="tel02" />-<input type="text" name="tel03_s" id="tel03" /></dd>
-<dt>◯メールアドレス</dt><dd><input type="text" name="email_s" id="email" /></dd>
-<dt>◯お資料</dt>
-<dd><select name="subject_s" class="text-box" id="subject">
-<option value="※お選びください">※お選びください</option>
-<option value="INFO360">Info360</option>
-<option value="BI for AC">BI for AC</option>
-<option value="3D点群計測">3D点群計測</option>
-<option value="AI-Structure">AI-Structure</option>
-<option value="求人について">求人について</option>
-<option value="その他">その他</option>
-</select>
-</dd>
-    
-<dt>◯お問い合わせ内容</dt><dd><textarea name="message_s" cols="30" rows="5" id="message"></textarea></dd>
-<p id="confirm-button" class="submit-container"><span>
-<input type="hidden" name="mailToNum" id="mailToNum" value="3" />
-<input name="autoReply" type="hidden" value="1" />
-<input type="hidden" name="mode" id="mode" value="CONFIRM" />
-<input type="submit" style=" " value="お請求資料内容を確認" />
-<p>
-</form>
-</div>
+  <h2>
+    <img
+      src="/commontest/img/inquiry/title.jpg"
+      width="760"
+      height="250"
+      alt=""
+    />
+  </h2>
+  <h3><span>資料請求フォーム</span></h3>
+  <div class="formArea">
+    <form
+      method="post"
+      name="sfm-form"
+      id="sfm-form"
+      action="<?php echo $sfm_script; ?>"
+    >
+      <dl class="formList">
+        <dt>
+          ◯会社名
+          <span class="required-icon"
+            ><i class="fas fa-asterisk"></i> 必須</span
+          >
+        </dt>
+        <dd><input type="text" name="cname" id="cname" /></dd>
+        <dt>◯部署名</dt>
+        <dd><input type="text" name="ckana" id="ckana" /></dd>
+        <dt>
+          ◯担当者名
+          <span class="required-icon"
+            ><i class="fas fa-asterisk"></i> 必須</span
+          >
+        </dt>
+        <dd class="namebox"><input type="text" name="name_s" id="name" /></dd>
+        <dt>
+          ◯電話番号
+          <span class="required-icon"
+            ><i class="fas fa-asterisk"></i> 必須</span
+          >
+        </dt>
+        <dd class="telbox">
+          <input type="text" name="tel01_s" id="tel01" />-
+          <input type="text" name="tel02_s" id="tel02" />-
+          <input type="text" name="tel03_s" id="tel03" />
+        </dd>
+        <dt>
+          ◯メールアドレス
+          <span class="required-icon"
+            ><i class="fas fa-asterisk"></i> 必須</span
+          >
+        </dt>
+        <dd><input type="text" name="email_s" id="email" /></dd>
+        <dt>
+          ◯メールアドレス確認
+          <span class="required-icon"
+            ><i class="fas fa-asterisk"></i> 必須</span
+          >
+        </dt>
+        <dd>
+          <input
+            type="text"
+            name="cemail_s"
+            id="cemail"
+            oncopy="return false"
+            onpaste="return false"
+            oncontextmenu="return false"
+          />
+          <!-- <p id="email-error">メールアドレスが一致しません</p> -->
+        </dd>
+
+        <dt>
+          ◯資料選択
+          <span class="required-icon"
+            ><i class="fas fa-asterisk"></i> 必須</span
+          >
+        </dt>
+        <dd>
+          <select name="subject_s" class="text-box" id="subject">
+            <option value="※お選びください">※お選びください</option>
+            <option value="INFO360">Info360</option>
+            <option value="BI for AC">BI for AC</option>
+            <option value="3D点群計測">3D点群計測</option>
+            <option value="AI-Structure">AI-Structure</option>
+            <option value="求人について">求人について</option>
+            <option value="その他">その他</option>
+          </select>
+        </dd>
+
+        <dt>◯お問い合わせ内容</dt>
+        <dd>
+          <textarea name="message_s" cols="30" rows="5" id="message"></textarea>
+        </dd>
+      </dl>
+
+      <div id="confirm-button" class="submit-container">
+        <input type="hidden" name="mailToNum" id="mailToNum" value="3" />
+        <input name="autoReply" type="hidden" value="1" />
+        <input type="hidden" name="mode" id="mode" value="CONFIRM" />
+        <input type="submit" value="お問い合わせ内容を確認" />
+      </div>
+    </form>
+  </div>
 </article>
-</div>
+
+<script>
+  document
+    .getElementById("sfm-form").addEventListener("submit", function (event) {
+      var isValid = true; // 用于标记表单是否通过验证
+      // 获取所有必填字段
+      var requiredFields = [
+        { id: "cname", message: "会社名は必須です。" },
+        { id: "name", message: "担当者名は必須です。" },
+        { id: "tel01", message: "電話番号は必須です。" },
+        { id: "email", message: "メールアドレスは必須です。" },
+        { id: "cemail", message: "メールアドレス確認は必須です。" },
+        { id: "subject", message: "お問い合わせ件名を選択してください。" },
+      ];
+
+      // 遍历必填字段进行验证
+      requiredFields.forEach(function (field) {
+        var input = document.getElementById(field.id);
+        var errorElement = document.getElementById(field.id + "-error");
+
+        // 检查是否为空
+        if (!input.value.trim()) {
+          if (!errorElement) {
+            // 如果错误信息不存在，则创建并插入
+            errorElement = document.createElement("p");
+            errorElement.id = field.id + "-error";
+            errorElement.style.color = "red";
+            errorElement.textContent = field.message;
+            input.parentNode.appendChild(errorElement);
+          }
+          isValid = false;
+        } else {
+          // 如果有值，删除错误信息
+          if (errorElement) {
+            errorElement.remove();
+          }
+        }
+      });
+
+      // 邮箱匹配检查
+      var email = document.getElementById("email").value.trim();
+      var cemail = document.getElementById("cemail").value.trim();
+      var emailError = document.getElementById("email-error");
+
+      if (!emailError) {
+        emailError = document.createElement("p");
+        emailError.id = "email-error";
+        emailError.style.color = "red";
+        emailError.textContent = "メールアドレスが一致しません";
+        document.getElementById("cemail").parentNode.appendChild(emailError);
+      }
+
+      if (email !== cemail) {
+        emailError.style.display = "block";
+        isValid = false;
+      } else {
+        emailError.style.display = "none";
+      }
+
+      // 如果有错误，阻止表单提交
+      if (!isValid) {
+        event.preventDefault();
+      }
+    });
+</script>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] ."/temp/footer.php") ?>

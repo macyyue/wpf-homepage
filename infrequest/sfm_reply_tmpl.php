@@ -14,23 +14,23 @@ $replyMessage = <<< EOD
 どうぞよろしくお願いいたします。
 
 ────────────────────────────────────
-■氏名
+■法人・団体名
+{$sfm_mail->cname}　様
+
+■法人・団体名（フリガナ）
+{$sfm_mail->ckana}　様
+
+■お名前
 {$sfm_mail->name}　様
-
-■部署名
-{$sfm_mail->ckana}
-
-■会社名
-{$sfm_mail->cname}
-
-■所在地
-{$sfm_mail->aname}
-
-■ご連絡先電話番号
-{$sfm_mail->tel01}-{$sfm_mail->tel02}-{$sfm_mail->tel03}
 
 ■ご連絡先メールアドレス
 {$sfm_mail->email}
+
+■ご連絡先メールアドレス確認
+{$sfm_mail->cemail}
+
+■ご連絡先電話番号
+{$sfm_mail->tel01}-{$sfm_mail->tel02}-{$sfm_mail->tel03}
 
 ■お資料
 {$sfm_mail->subject}
