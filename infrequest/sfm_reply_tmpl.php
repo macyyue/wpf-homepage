@@ -14,13 +14,13 @@ $replyMessage = <<< EOD
 どうぞよろしくお願いいたします。
 
 ────────────────────────────────────
-■法人・団体名
+■会社名
 {$sfm_mail->cname}　様
 
-■法人・団体名（フリガナ）
+■部署名
 {$sfm_mail->ckana}　様
 
-■お名前
+■担当者名
 {$sfm_mail->name}　様
 
 ■ご連絡先メールアドレス
@@ -32,7 +32,7 @@ $replyMessage = <<< EOD
 ■ご連絡先電話番号
 {$sfm_mail->tel01}-{$sfm_mail->tel02}-{$sfm_mail->tel03}
 
-■お資料
+■お資料請求内容
 {$sfm_mail->subject}
 
 

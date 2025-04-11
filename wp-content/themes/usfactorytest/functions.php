@@ -212,7 +212,6 @@ function mainpagination($pages, $paged, $range = 2, $show_only = false)
           }
         }
       }
-
       //リンク表示ここまで
     }
     echo '</li>';

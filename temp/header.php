@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="/commontest/css/general.css" media="screen">
   <link rel="stylesheet" href="/commontest/css/index.css" media="screen">
   <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js?ver=1.8.3'></script>
-  <script type="text/javascript" src="/commontest/js/script.js"></script>
-  <script type="text/javascript" src="/commontest/js/script.js"></script>
-  <script type="text/javascript" src="/commontest/js/dialog.html"></script>
+  <!-- <script type="text/javascript" src="/commontest/js/dialog.html"></script> -->
   <meta name="description" content="" />
   <meta name="keywords" content="" />
-  <script type="text/javascript" src="/commontest/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
-  <script type="text/javascript" src="/commontest/fancybox/source/jquery.fancybox.js?v=2.1.4"></script>
-  <link rel="stylesheet" type="text/css" href="/commontest/fancybox/source/jquery.fancybox.css?v=2.1.4" media="screen" />
+  <!-- <script type="text/javascript" src="/common/js/script.js"></script>
+<script type="text/javascript" src="/common/js/common.js"></script> -->
+  <!-- <script type="text/javascript" src="/commontest/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script> -->
+  <!-- <script type="text/javascript" src="/commontest/fancybox/source/jquery.fancybox.js?v=2.1.4"></script> -->
+  <!-- <link rel="stylesheet" type="text/css" href="/commontest/fancybox/source/jquery.fancybox.css?v=2.1.4" media="screen" /> -->
   <script type="text/javascript">
     $(document).ready(function() {
       /*
@@ -35,13 +35,13 @@
   <link rel="alternate" type="application/rss+xml" title="株式会社U&#039;s Factory &raquo; フィード" href="http://us-factory.jp/feed/" />
   <link rel="alternate" type="application/rss+xml" title="株式会社U&#039;s Factory &raquo; コメントフィード" href="http://us-factory.jp/comments/feed/" />
   <link rel='stylesheet' id='open-sans-css' href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1.5' type='text/css' media='all' />
-  <link rel='stylesheet' id='dashicons-css' href='http://us-factory.jp/wp-includes/css/dashicons.min.css?ver=4.1.5' type='text/css' media='all' />
-  <link rel='stylesheet' id='admin-bar-css' href='http://us-factory.jp/wp-includes/css/admin-bar.min.css?ver=4.1.5' type='text/css' media='all' />
-  <link rel='stylesheet' id='contact-form-7-css' href='http://us-factory.jp/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.1.2' type='text/css' media='all' />
-  <link rel='stylesheet' id='usfactory-style-css' href='http://us-factory.jp/wp-content/themes/usfactory/style.css?ver=4.1.5' type='text/css' media='all' />
-  <link rel='stylesheet' id='jquery.lightbox.min.css-css' href='http://us-factory.jp/wp-content/plugins/wp-jquery-lightbox/styles/lightbox.min.css?ver=1.4.6' type='text/css' media='all' />
-  <script type='text/javascript' src='http://us-factory.jp/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
-  <script type='text/javascript' src='http://us-factory.jp/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+  <link rel='stylesheet' id='dashicons-css' href='https://us-factory.jp/wp-includes/css/dashicons.min.css?ver=4.1.5' type='text/css' media='all' />
+  <link rel='stylesheet' id='admin-bar-css' href='https://us-factory.jp/wp-includes/css/admin-bar.min.css?ver=4.1.5' type='text/css' media='all' />
+  <link rel='stylesheet' id='contact-form-7-css' href='https://us-factory.jp/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.1.2' type='text/css' media='all' />
+  <link rel='stylesheet' id='usfactory-style-css' href='https://us-factory.jp/wp-content/themes/usfactory/style.css?ver=4.1.5' type='text/css' media='all' />
+  <link rel='stylesheet' id='jquery.lightbox.min.css-css' href='https://us-factory.jp/wp-content/plugins/wp-jquery-lightbox/styles/lightbox.min.css?ver=1.4.6' type='text/css' media='all' />
+  <script type='text/javascript' src='https://us-factory.jp/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+  <script type='text/javascript' src='https://us-factory.jp/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
   <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://us-factory.jp/xmlrpc.php?rsd" />
   <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://us-factory.jp/wp-includes/wlwmanifest.xml" />
   <meta name="generator" content="WordPress 4.1.5" />
@@ -62,8 +62,7 @@
   </style>
 </head>
 
-<body class="home no-customize-support"> <?php // blog logged-in admin-bar 
-                                          ?>
+<body class="home no-customize-support"> <?php // blog logged-in admin-bar ?>
 
   <article id="all_container">
     <!-- <p class="discription"><span>ゼネコン・サブコン様における熟練技術者不足の問題を解決する会社</span></p> -->
@@ -165,8 +164,7 @@
           src="images/mokuzo-logo-horizontal.svg"
           class="brand_logo"
           alt="ページ上部へ"
-          data-astro-cid-ttztgwaq
-        />
+          data-astro-cid-ttztgwaq/>
       </a> -->
           <ul data-astro-cid-ttztgwaq class="dropmenu">
             <li data-astro-cid-ttztgwaq>

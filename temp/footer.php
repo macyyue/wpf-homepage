@@ -37,7 +37,7 @@
 <footer>
 	<div class="footerItem">
 		<div class="ftBoxL">
-		<h5><a href="/"><img src="/commontest/img/us-logo.svg" width="200" height="40" alt=""></a></h5>
+		<h5><a href="/"><img src="/commontest/img/homepage/us-logo-footer.svg" width="200" height="40" alt=""></a></h5>
 				<h6>株式会社U'sFactory　（ユーズファクトリ）</h6>
 				<p class="ftTel">045-348-1560</p>
 				<p class="time">受付時間 9：30～17：30（土・日・祝日除く）</p>
@@ -65,7 +65,7 @@
 					<dt><a href="/access/">アクセス</a></dt>
 				</dl>
 			</div>
-		<p class="credit">Copyright©2013-2024　U’sFactory All Rights Reserved.</p>
+		<p class="credit">Copyright©2013-2025　U’sFactory All Rights Reserved.</p>
 	</div>
 </footer>
 
